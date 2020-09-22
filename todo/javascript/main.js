@@ -13,17 +13,27 @@ const addToDo = (e) => {
 
   newItem.textContent = newToDo;
 
-  // add button
-  const button = document.createElement("button");
-  button.className = "btn btn-danger btn-sm float-right delete";
+  // add del button
+  const delButton = document.createElement("button");
+  delButton.className = "btn btn-danger btn-sm float-right delete";
 
-  // add icon
-  const icon = document.createElement("i");
-  icon.className = "fas fa-trash";
+  // add delete icon
+  const delIcon = document.createElement("i");
+  delIcon.className = "fas fa-trash";
 
-  button.appendChild(icon);
+  // add toggle button
+  const toggleButton = document.createElement("button");
+  toggleButton.className = "btn btn-success btn-sm float-right toggle mr-4";
 
-  newItem.appendChild(button);
+  // add toggle icon
+  const toggleIcon = document.createElement("i");
+  toggleIcon.className = "far fa-check-circle";
+
+  delButton.appendChild(delIcon);
+  toggleButton.appendChild(toggleIcon);
+
+  newItem.appendChild(delButton);
+  newItem.appendChild(toggleButton);
   todoList.appendChild(newItem);
 
   // reset input
@@ -38,29 +48,85 @@ form.addEventListener("submit", addToDo);
 
 const removeItem = (e) => {
   if (e.target.classList.contains("delete")) {
+    if (confirm("Are you sure?")) {
+      const li = e.target.parentElement;
+      li.remove();
+    }
+  }
+
+  // toggle todostate
+
+  if (e.target.classList.contains("toggle")) {
+    const icon = e.target.children[0];
+    icon.classList.toggle("fa-check-circle");
+    icon.classList.toggle("fa-times-circle");
+
     const li = e.target.parentElement;
-    li.remove();
+    li.classList.toggle("undone");
+    li.classList.toggle("done");
+
+    e.target.classList.toggle("btn-danger");
+    e.target.classList.toggle("btn-success");
   }
 };
 
 const allItems = document.getElementById("items");
 allItems.addEventListener("click", removeItem);
 
-// filter items
+// filter items through search
 
 const filterToDo = (e) => {
-  const searchTerm = e.target.value.toLowerCase();
+  const keyword = e.target.value.toLowerCase();
+  hideList(keyword);
+};
 
+const filterInput = document.getElementById("filter");
+filterInput.addEventListener("keyup", filterToDo);
+
+// filter items through radio buttons
+
+const handleRadioFilter = (e) => {
+  const todoState = e.target.value;
+  hideListRadio(todoState);
+};
+
+const radioButtons = document.querySelectorAll("#select-type button");
+Array.from(radioButtons).map((btn) =>
+  btn.addEventListener("click", handleRadioFilter)
+);
+
+function hideList(keyword) {
   const allList = document.querySelectorAll("li");
   Array.from(allList).map((li) => {
     const todoTitle = li.firstChild.textContent;
-    if (todoTitle.toLowerCase().includes(searchTerm)) {
+    if (todoTitle.toLowerCase().includes(keyword)) {
       li.style.display = "block";
     } else {
       li.style.display = "none";
     }
   });
-};
+}
 
-const filterInput = document.getElementById("filter");
-filterInput.addEventListener("keyup", filterToDo);
+function hideListRadio(keyword) {
+  console.log(keyword);
+  const allList = document.querySelectorAll("li");
+  Array.from(allList).map((li) => {
+    const allClass = Array.from(li.classList);
+    if (keyword === "all") {
+      return (li.style.display = "block");
+    }
+
+    if (allClass.includes(keyword)) {
+      li.style.display = "block";
+    } else {
+      li.style.display = "none";
+    }
+  });
+}
+
+// hide notice
+
+const hideBtn = document.getElementById("btn-hide");
+hideBtn.addEventListener("click", () => {
+  document.getElementById("hide-content").remove();
+});

@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./favicon.ico" />
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./css/all.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
     <link rel="stylesheet" href="./css/styles.css" />
     <title>ToDo</title>
   </head>
@@ -34,68 +35,65 @@
           <input type="submit" class="btn btn-success" value="Submit" />
         </form>
 
-        <form id="selectType" class="mb-3">
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="inlineRadioOptions"
-              id="inlineRadio1"
-              checked
-            />
-            <label class="form-check-label" for="inlineRadio1">All</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="inlineRadioOptions"
-              id="inlineRadio2"
-            />
-            <label class="form-check-label" for="inlineRadio2">Completed</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="inlineRadioOptions"
-              id="inlineRadio2"
-            />
-            <label class="form-check-label" for="inlineRadio2"
-              >Incomplete</label
-            >
-          </div>
-        </form>
+        <div
+          class="row justify-content-between mb-3 row-cols-3"
+          id="select-type"
+        >
+          <button class="btn btn-dark btn-sm col-3" value="all">All</button>
+          <button class="btn btn-dark btn-sm col-3" value="done">
+            Completed
+          </button>
+          <button class="btn btn-dark btn-sm col-3" value="undone">
+            Incomplete
+          </button>
+        </div>
+
         <h2 class="title">ToDos</h2>
         <ul id="items" class="list-group">
-          <li class="list-group-item">
+          <li class="list-group-item undone">
             Task 1
             <button class="btn btn-danger btn-sm float-right delete">
               <i class="fas fa-trash"></i>
             </button>
+            <button class="btn btn-success btn-sm float-right toggle mr-4">
+              <i class="far fa-check-circle"></i>
+            </button>
           </li>
-          <li class="list-group-item">
+          <li class="list-group-item undone">
             Task 2
             <button class="btn btn-danger btn-sm float-right delete">
               <i class="fas fa-trash"></i>
             </button>
+            <button class="btn btn-success btn-sm float-right toggle mr-4">
+              <i class="far fa-check-circle"></i>
+            </button>
           </li>
-          <li class="list-group-item">
+          <li class="list-group-item undone">
             Task 3
             <button class="btn btn-danger btn-sm float-right delete">
               <i class="fas fa-trash"></i>
             </button>
-          </li>
-          <li class="list-group-item">
-            Task 4
-            <button class="btn btn-danger btn-sm float-right delete">
-              <i class="fas fa-trash"></i>
+            <button class="btn btn-success btn-sm float-right toggle mr-4">
+              <i class="far fa-check-circle"></i>
             </button>
           </li>
         </ul>
       </div>
     </div>
 
+    <div class="bg-danger p-3 mt-5 text-white" id="hide-content">
+      <h2>Known Bugs</h2>
+      <ul>
+        <li>Click event is not working properly on delete and toggle button</li>
+        <li>
+          filtering through input field is incompatible with filter through
+          buttons
+        </li>
+      </ul>
+      <button class="btn btn-block btn-outline-light" id="btn-hide">
+        Hide
+      </button>
+    </div>
     <script src="./javascript/main.js"></script>
   </body>
 </html>
