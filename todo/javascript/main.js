@@ -9,7 +9,7 @@ const addToDo = (e) => {
   const todoList = document.getElementById("items");
 
   const newItem = document.createElement("li");
-  newItem.className = "list-group-item";
+  newItem.className = "list-group-item undone";
 
   newItem.textContent = newToDo;
 
@@ -47,17 +47,24 @@ form.addEventListener("submit", addToDo);
 // get all delete buttons and listen to click
 
 const removeItem = (e) => {
-  if (e.target.classList.contains("delete")) {
+  const btn = e.target.classList;
+  if (btn.contains("delete") || btn.contains("fa-trash")) {
     if (confirm("Are you sure?")) {
       const li = e.target.parentElement;
+
+      if (btn.contains("fa-trash")) {
+        const parentli = li.parentElement;
+        return parentli.remove();
+      }
       li.remove();
     }
   }
 
   // toggle todostate
 
-  if (e.target.classList.contains("toggle")) {
+  if (btn.contains("toggle")) {
     const icon = e.target.children[0];
+
     icon.classList.toggle("fa-check-circle");
     icon.classList.toggle("fa-times-circle");
 
@@ -67,6 +74,18 @@ const removeItem = (e) => {
 
     e.target.classList.toggle("btn-danger");
     e.target.classList.toggle("btn-success");
+  }
+
+  if (btn.contains("far")) {
+    btn.toggle("fa-check-circle");
+    btn.toggle("fa-times-circle");
+    const button = e.target.parentElement;
+    button.classList.toggle("btn-danger");
+    button.classList.toggle("btn-success");
+
+    const li = button.parentElement;
+    li.classList.toggle("undone");
+    li.classList.toggle("done");
   }
 };
 
@@ -108,7 +127,6 @@ function hideList(keyword) {
 }
 
 function hideListRadio(keyword) {
-  console.log(keyword);
   const allList = document.querySelectorAll("li");
   Array.from(allList).map((li) => {
     const allClass = Array.from(li.classList);
