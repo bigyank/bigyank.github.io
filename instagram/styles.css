@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
 body {
   font-family: "Open Sans", sans-serif;
   background-color: #fafafa;
@@ -7,7 +9,6 @@ body {
 
 nav {
   font-family: sans-serif;
-  margin-top: 350px;
   padding: 12em;
 }
 
