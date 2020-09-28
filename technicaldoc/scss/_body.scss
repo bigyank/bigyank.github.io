@@ -1,0 +1,17 @@
+body {
+  min-width: 290px;
+  line-height: 1.5;
+  background-color: $body-bg-color;
+  color: $body-color;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+@media (min-width: 1000px) {
+  body {
+    display: flex;
+
+    nav {
+      width: 1200px;
+    }
+  }
+}

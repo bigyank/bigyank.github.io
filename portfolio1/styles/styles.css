@@ -1,0 +1,153 @@
+body {
+  font-family: "PT Sans", sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  background-color: #1e2127;
+  color: #a6adbb;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  padding: 50px 15px;
+  background-color: #1e2127;
+}
+
+.portfolio-person {
+  color: #ff0000;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.navigation {
+  padding-left: 140px;
+}
+
+.navigation li {
+  display: inline-block;
+}
+
+nav a {
+  color: #a6adbb;
+  text-decoration: none;
+  font-size: 1.3em;
+}
+
+.navigation a {
+  padding-left: 30px;
+}
+
+.navigation a:hover {
+  color: #905fa3;
+}
+
+#profile-link img {
+  margin: 0 15px;
+  height: 100%;
+  width: 40px;
+}
+
+main {
+  margin-top: 100px;
+}
+
+.welcome-section h1 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  color: #d2a062;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.card {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  max-width: 1000px;
+  height: 280px;
+  margin: 20px auto;
+  background-color: #1e2127;
+  -webkit-box-shadow: 5px 5px 15px 5px #000000;
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+
+.card .pic {
+  width: 40%;
+}
+
+.card .about {
+  width: 40%;
+}
+
+.profile-card .pic img {
+  height: 100%;
+  width: 55%;
+  border-radius: 50%;
+}
+
+.project-card .pic img {
+  height: 100%;
+  width: auto;
+}
+
+@media (max-width: 999px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 0;
+  }
+
+  #profile-link a {
+    display: inline-block;
+    margin-top: 15px;
+  }
+
+  .navigation a {
+    padding-right: 5px;
+  }
+
+  .navigation {
+    padding-left: 0;
+  }
+
+  .card {
+    height: 350px;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .card .pic {
+    height: 50%;
+    flex: 0;
+  }
+
+  .card .about {
+    height: 50%;
+    width: 80%;
+    flex: 0;
+  }
+
+  .card .about p {
+    margin-top: 10px;
+    text-align: justify;
+  }
+
+  .profile-card .pic img {
+    max-width: 45%;
+    height: auto;
+    margin-left: 90px;
+  }
+
+  .project-card .pic img {
+    height: 100%;
+    width: 100%;
+  }
+}

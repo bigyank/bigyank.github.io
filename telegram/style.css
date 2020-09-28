@@ -1,0 +1,319 @@
+body {
+  color: white;
+  background-color: #17212b;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+body i {
+  color: #6a7581;
+}
+.telegram {
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+}
+
+main {
+  display: flex;
+}
+
+/* Nav bar */
+
+.header {
+  padding: 0.8em;
+}
+
+.search {
+  max-width: 20%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-around;
+}
+
+.search-box input {
+  background-color: #242f3d;
+  width: 250px;
+  padding: 10px;
+  outline: none;
+  border: 0;
+  border-radius: 10px;
+}
+
+.info {
+  flex-grow: 3;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-menu i {
+  margin-right: 20px;
+}
+
+.useless {
+  flex-grow: 1;
+  max-width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* body */
+.people {
+  max-width: 20%;
+  flex-grow: 1;
+}
+
+.box {
+  height: 5em;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1em;
+}
+
+.people .active {
+  background-color: #2b5278;
+}
+
+.box img {
+  border-radius: 50%;
+  margin-left: 1.5em;
+  height: 4.5em;
+  width: auto;
+}
+
+.group-info div {
+  padding: 10px;
+}
+
+.group-info span {
+  margin-left: 2em;
+}
+
+.messages {
+  flex-grow: 3;
+  max-width: 60%;
+  position: relative;
+  background-color: #0e1621;
+  font-size: 18px;
+}
+
+.message-body i {
+  margin-left: 20px;
+}
+
+.message-body .message {
+  background-color: #182533;
+}
+
+.single-message {
+  max-width: 45em;
+  margin-left: 5em;
+  margin-top: 0.5em;
+  padding: 1em 2em;
+  border-radius: 25px;
+  line-height: 1.5em;
+}
+
+.last-message {
+  display: inline-block;
+  max-width: 45em;
+  margin-left: 2em;
+  margin-top: 0.5em;
+  padding: 1em 2em;
+  border-radius: 25px;
+  line-height: 1.5em;
+}
+
+.message-reply {
+  display: inline-block;
+  max-width: 45em;
+  margin-left: 2em;
+  margin-top: 1.5em;
+  padding: 1em 2em;
+  border-radius: 25px;
+  line-height: 1.5em;
+}
+
+.message-input {
+  height: 60px;
+  width: 60%;
+  position: fixed;
+  bottom: 10px;
+}
+
+.message-input i {
+  margin: 0.4em 0.2em;
+}
+
+.message-input input {
+  background-color: #242f3d;
+  width: 85%;
+  padding: 1em;
+  border: 0;
+  border-radius: 10px;
+}
+
+.desc {
+  flex-grow: 1;
+  max-width: 20%;
+}
+
+.desc .seperator {
+  height: 15px;
+  width: auto;
+  background-color: #232e3c;
+}
+.desc .short-desc {
+  height: 8em;
+}
+
+.desc .long-desc {
+  height: 10em;
+}
+
+.desc .notification {
+  height: 5em;
+
+  position: relative;
+}
+
+.desc .notification i {
+  margin-left: 1em;
+  margin-top: 0.5em;
+}
+
+.desc .notification .toggle {
+  position: absolute;
+  right: 1em;
+}
+
+.desc .notification span {
+  padding: 1em;
+  position: absolute;
+  left: 7em;
+  top: 0.5em;
+}
+
+.desc .media {
+  height: 18em;
+
+  position: relative;
+}
+
+.media div {
+  height: 20%;
+}
+
+.media i {
+  margin-left: 1em;
+  margin-top: 0.3em;
+}
+
+.media span {
+  padding: 1em;
+  position: absolute;
+  left: 7em;
+}
+
+.desc .member-option {
+  position: relative;
+  height: 4em;
+}
+
+.member-option i {
+  margin-left: 1em;
+  margin-top: 0.3em;
+}
+
+.member-option .member-search {
+  position: absolute;
+  right: 1em;
+  top: 0.2em;
+}
+
+.member-option span {
+  position: absolute;
+  padding: 1em;
+  left: 7em;
+}
+
+.desc .member-all {
+  height: 5em;
+}
+
+.full-desc .title-desc {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.short-desc {
+  display: flex;
+  justify-content: space-between;
+}
+
+.short-desc img {
+  margin-top: 1em;
+  margin-left: 1em;
+  height: 5em;
+  width: auto;
+}
+
+.short-desc .short-desc-about {
+  margin-top: 2em;
+  margin-right: 8em;
+}
+
+.short-desc .short-desc-about .name {
+  font-size: 1.5em;
+  padding: 0.5em;
+}
+
+.desc .long-desc {
+  display: flex;
+}
+
+.desc .long-desc i {
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+}
+
+.long-desc .link a {
+  font-size: 20px;
+  color: hotpink;
+}
+
+.long-desc .long-desc-info {
+  margin-top: 1em;
+  margin-left: 4.5em;
+}
+
+.long-desc-info div {
+  margin-top: 1em;
+}
+
+.long-desc .long-desc-info span {
+  display: block;
+}
+
+.member-all {
+  display: flex;
+  justify-content: space-between;
+}
+
+.member-pic i {
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+}
+
+.member-info span {
+  display: block;
+  margin-right: 10em;
+  margin-top: 2em;
+  padding: 10px 0px;
+}
+
+.member-info p {
+  color: skyblue;
+}
